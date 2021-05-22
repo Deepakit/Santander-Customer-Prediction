@@ -29,5 +29,6 @@ We use .describe() in python to get a look at the numerical data composition.
 ![](https://github.com/Deepakit/Santander-Customer-Prediction/blob/main/Images/Describe%20data.PNG)
 
 *Standard Deviation in both train and test is quite significant.
+
 *Mean and other measures are close.
 
