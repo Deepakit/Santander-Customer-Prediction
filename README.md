@@ -26,8 +26,8 @@ By doing same, we can get an idea how the data is distributed and is there any p
 ### Statistics of the data
 We use .describe() in python to get a look at the numerical data composition.
 
-![](/Images/Describe data.png)
+![](https://github.com/Deepakit/Santander-Customer-Prediction/blob/main/Images/Describe%20data.PNG)
 
-•	Standard Deviation in both train and test is quite significant.
-•	Mean and other measures are close.
+..*Standard Deviation in both train and test is quite significant.
+..*Mean and other measures are close.
 
