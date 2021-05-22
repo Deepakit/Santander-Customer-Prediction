@@ -60,3 +60,11 @@ Outliers in the data may occur due to poor measurement quality or some external 
 ![](/Images/outlier.PNG)
 Although, I have only posted here till var_39 but outliers are present in all columns. This can affect the model so we will be removing them.
 We calculate the 25 and 75 percentile , and found min and max , and remove all the points less than min and greater than max.
+
+### Feature Selection
+Feature selection is very important for modelling . Every dataset have unwanted and good features and both features affect the performance of model. In the classification modelling feature selection is about selecting the independent variables which will be helpful in predicting the target variable. It is also know as Dimensionality Reduction. For numerical data we can use correlation plot.
+![](/Images/heatmap_1.PNG)
+From the colour of the graph we can see that there isn't much correlation between the variables. So, we have to keep all the 200 columns.
+
+To re-confirm the same I also used PCA on dummy training dataset and plot variance ratio.
+![](/Images/plot-variance.PNG)
