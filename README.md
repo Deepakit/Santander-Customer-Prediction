@@ -9,9 +9,11 @@
 We are provided with Train and test data which have 200k samples each and we have 200 anonimyzed numerical columns. 
 
 ..* Training Data
+
 ![](/Images/Training_data.png)
 
 ..* Testing Data
+
 ![](/Images/Testing_data.png)
 
 We have 200 numerical variables in both sets , named from var_0 to var_199 and one target, ID column.
@@ -22,8 +24,8 @@ We take a look at the data provided to us by organizing ,plotting and summarizin
 By doing same, we can get an idea how the data is distributed and is there any pattern observed in data.
 
 ### Statistics of the data
-•	We use .describe() in python to get a look at the numerical data composition.
-![alt_text](/Images/Describe data.png)
+We use .describe() in python to get a look at the numerical data composition.
+![](/Images/Describe data.png)
 
 •	Standard Deviation in both train and test is quite significant.
 •	Mean and other measures are close.
