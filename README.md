@@ -8,11 +8,11 @@
 ## Data
 We are provided with Train and test data which have 200k samples each and we have 200 anonimyzed numerical columns. 
 
-..* Training Data:
+* Training Data:
 
 ![](https://github.com/Deepakit/Santander-Customer-Prediction/blob/main/Images/Training_data.PNG)
 
-..* Testing Data:
+* Testing Data:
 
 ![](https://github.com/Deepakit/Santander-Customer-Prediction/blob/main/Images/Testing_data.PNG)
 
@@ -28,6 +28,6 @@ We use .describe() in python to get a look at the numerical data composition.
 
 ![](https://github.com/Deepakit/Santander-Customer-Prediction/blob/main/Images/Describe%20data.PNG)
 
-..*Standard Deviation in both train and test is quite significant.
-..*Mean and other measures are close.
+*Standard Deviation in both train and test is quite significant.
+*Mean and other measures are close.
 
