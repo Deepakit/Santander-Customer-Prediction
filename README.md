@@ -14,7 +14,7 @@ We are provided with Train and test data which have 200k samples each and we hav
 
 * Testing Data:
 
-![](https://github.com/Deepakit/Santander-Customer-Prediction/blob/main/Images/Testing_data.PNG)
+![](/Images/Testing_data.PNG)
 
 We have 200 numerical variables in both sets , named from var_0 to var_199 and one target, ID column.
 
@@ -26,13 +26,13 @@ By doing same, we can get an idea how the data is distributed and is there any p
 ### Statistics of the data
 We use .describe() in python to get a look at the numerical data composition.
 
-![](https://github.com/Deepakit/Santander-Customer-Prediction/blob/main/Images/Describe%20data.PNG)
+![](/Images/Describe%20data.PNG)
 
 * Standard Deviation in both train and test is quite significant.
 * Mean and other measures are close.
 
 ### Target Distribution
-![](https://github.com/Deepakit/Santander-Customer-Prediction/blob/main/Images/Target_dist.PNG)
+![](/Images/Target_dist.PNG)
 
 We noted few pointers:
 * We are having a unbalanced data, where 90% of the data is no. of customers who will not make a transaction & 10 % of  the data are those who will make a transaction.
@@ -42,6 +42,21 @@ We noted few pointers:
 ### Distribution
 Get an idea of this data distribution, we review in the training dataset that we will work with, we review the histogram of the mean values of each record based on the binary target variable.
 
-![](https://github.com/Deepakit/Santander-Customer-Prediction/blob/main/Images/dist_of_mean_over_data.PNG)
+![](/Images/dist_of_mean_over_data.PNG)
 
 As we can see that there is a small variation in the mean of all feature that could explain the target variable
+
+### Missing Value Analysis
+
+We look for possible null values in the dataframe and if found any we will be filling them if number is significant.
+```python
+print(customer_data.isnull().sum().any())
+print(test_data.isnull().sum().any())
+```
+As we can see there is no missing values in both train as well as in test data.
+
+### Outlier
+Outliers in the data may occur due to poor measurement quality or some external reasons. As they may effect in our prediction modelling we have to deal with it. In a simple way we can detect outliers by plotting box plots of the different variables in the data set. We used boxplot method to identify the outliers. It helps by defining the upperlimit and lower limit beyond which any data lying is considered to be an outlier. 
+![](/Images/outlier.PNG)
+Although, I have only posted here till var_39 but outliers are present in all columns. This can affect the model so we will be removing them.
+We calculate the 25 and 75 percentile , and found min and max , and remove all the points less than min and greater than max.
