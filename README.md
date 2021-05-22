@@ -68,3 +68,36 @@ From the colour of the graph we can see that there isn't much correlation betwee
 
 To re-confirm the same I also used PCA on dummy training dataset and plot variance ratio.
 ![](/Images/plot-variance.PNG)
+
+## Data Preparation
+Note we are dealing with a data set very unbalanced, where there is only *10%* of records categorized with __target 1__, so those customers who have made a financial transaction.
+To develop a binary classification model we need to have more balanced data since most machine learning algorithms work best when the number of samples in each class is almost the same. This is because most algorithms are designed to maximize accuracy and reduce error, so we'll try to do this in this section before to predict models fit better.
+How we have a large dataset with 200,000 records we could undersampling in the data with the balanced target variable. Initially we will test a resampling in a 1:1 ratio but depending on the results we can use other proportions. Keep in mind that with undersampling we might be removing information that may be valuable. This could lead to a lack of fit and poor generalization of the test set.
+
+![](/main/Images/Sampling.PNG)
+
+### Under-Sampling
+```python
+class_0,class_1 = customer_data.target.value_counts()
+
+df_class_0 = customer_data[customer_data['target']==0]
+df_class_1 = customer_data[customer_data['target']==1]
+
+under_df_0 = df_class_0.sample(class_1)
+df_train_under = pd.concat([under_df_0,df_class_1],axis=0)
+
+print(df_train_under.target.value_counts())
+df_train_under.describe()
+```
+
+### Over-Sampling
+```python
+over_df = resample(df_class_1, replace=True, n_samples=179813,random_state=123)
+
+df_train_over = pd.concat([over_df,df_class_0],axis=0)
+
+len(df_train_over)
+print(df_train_over.target.value_counts())
+df_train_over.describe()
+```
+
