@@ -8,11 +8,11 @@
 ## Data
 We are provided with Train and test data which have 200k samples each and we have 200 anonimyzed numerical columns. 
 
-..* Training Data
+..* Training Data:
 
 ![](/Images/Training_data.png)
 
-..* Testing Data
+..* Testing Data:
 
 ![](/Images/Testing_data.png)
 
@@ -25,6 +25,7 @@ By doing same, we can get an idea how the data is distributed and is there any p
 
 ### Statistics of the data
 We use .describe() in python to get a look at the numerical data composition.
+
 ![](/Images/Describe data.png)
 
 •	Standard Deviation in both train and test is quite significant.
