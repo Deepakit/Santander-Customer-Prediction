@@ -10,11 +10,11 @@ We are provided with Train and test data which have 200k samples each and we hav
 
 ..* Training Data:
 
-![](/Images/Training_data.png)
+![](https://github.com/Deepakit/Santander-Customer-Prediction/blob/main/Images/Training_data.PNG)
 
 ..* Testing Data:
 
-![](/Images/Testing_data.png)
+![](https://github.com/Deepakit/Santander-Customer-Prediction/blob/main/Images/Testing_data.PNG)
 
 We have 200 numerical variables in both sets , named from var_0 to var_199 and one target, ID column.
 
