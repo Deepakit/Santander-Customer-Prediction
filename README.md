@@ -101,3 +101,34 @@ print(df_train_over.target.value_counts())
 df_train_over.describe()
 ```
 
+## Modelling
+After all early stages of preprocessing, then model the data. So, we have to select best model for this project with the help of some metrics.
+
+In order to automate the performance measures of the different models, we will factor a function to measure the metrics and be able to make comparisons between the different algorithms applied.
+```python
+def metrics(y_true,y_pred):
+    print("Confusion Matrix")
+    print(confusion_matrix(y_true,y_pred))
+    
+    print("Accuracy:", accuracy_score(y_true,y_pred))
+    print("Precision:", precision_score(y_true,y_pred))
+    print("F1 Score:", f1_score(y_true,y_pred))
+    print("Recall:", recall_score(y_true,y_pred))
+    
+    false_positive_rate,recall,thresholds = roc_curve(y_true,y_pred)
+    roc_auc = auc(false_positive_rate,recall)
+    
+    print("ROC:",roc_auc)
+    
+    plt.plot(false_positive_rate,recall,'b')
+    plt.plot([0,1],[0,1],'r--')
+    plt.title("AUC=%0.2f"%roc_auc)
+    plt.show()
+```
+The models we used are:
+1) Logistic Regression
+   As data provided is linearly separable it provides us with a good opportunity to check our data with the simplest model so to set a benchmark for other models to beat.
+2) Random Forest
+   This constructor requires more parameters than the decision tree because it is to be told the number of tree models to use, for which the parameter can be used                n_estimators. On the other hand, as selecting the data to be used for each submodel it is a good idea to fix the seed to ensure that the results are repeatable
+3) Naive Bayes
+   Naive Bayes classifiers are a family of simple "probabilistic classifier" based on applying bayes theorm with strong independence assumptions between the features.We did      not found any dependency between data and dataset itself is too large.
