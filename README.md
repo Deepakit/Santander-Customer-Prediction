@@ -10,7 +10,7 @@ We are provided with Train and test data which have 200k samples each and we hav
 
 * Training Data:
 
-![](https://github.com/Deepakit/Santander-Customer-Prediction/blob/main/Images/Training_data.PNG)
+![](/Images/Training_data.PNG)
 
 * Testing Data:
 
